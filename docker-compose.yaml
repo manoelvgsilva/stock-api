@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    command: [--auth]
+    container_name: stockdb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: stockAdmin
+      MONGO_INITDB_ROOT_PASSWORD: stockPassword
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/stock/db
+
+  springboot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATA_MONGODB_HOST: root
+      SPRING_DATA_MONGODB_PORT: 27017
+      SPRING_DATA_MONGODB_DATABASE: stockdb
+    depends_on:
+      - mongodb
+    ports:
+      - 8081:8080
+
+volumes:
+  mongo-data:
