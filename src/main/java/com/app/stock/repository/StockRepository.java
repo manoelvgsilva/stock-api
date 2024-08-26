@@ -1,11 +1,13 @@
 package com.app.stock.repository;
 
 import com.app.stock.entity.Stock;
+import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
+/**
+ * stockrepository.
+ */
 @Repository
 public interface StockRepository extends MongoRepository<Stock, Long> {
   Optional<Stock> findById(Long productId);

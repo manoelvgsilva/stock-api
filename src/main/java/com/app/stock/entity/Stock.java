@@ -1,11 +1,19 @@
 package com.app.stock.entity;
 
-import jakarta.persistence.*;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.util.Date;
 import java.util.Objects;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+/**
+ * stock.
+ */
 @Entity
 @Table(name = "stocks")
 @EntityListeners(AuditingEntityListener.class)
@@ -24,7 +32,26 @@ public class Stock {
 
   public Stock() {}
 
-  public Stock(Long productId, Long quantityPresent, Long quantityMinimous, Long quantityMaximous, Date dateValidity, String localPresent, boolean statusProduct) {
+  /**
+   * stock.
+   *
+   * @param productId the productid
+   * @param quantityPresent the quantitypresent
+   * @param quantityMinimous the quantityminimous
+   * @param quantityMaximous the quantitymaximous
+   * @param dateValidity the datevality
+   * @param localPresent the localpresent
+   * @param statusProduct the statusproduct
+   */
+  public Stock(
+      Long productId,
+      Long quantityPresent,
+      Long quantityMinimous,
+      Long quantityMaximous,
+      Date dateValidity,
+      String localPresent,
+      boolean statusProduct
+  ) {
     this.productId = productId;
     this.quantityPresent = quantityPresent;
     this.quantityMinimous = quantityMinimous;
