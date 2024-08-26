@@ -11,18 +11,18 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
   /**
-   * topicuser.
+   * topicstock.
    */
-  @Value("${topic.user}")
-  private static String topicUser;
+  @Value("${topic.stock}")
+  private static String topicStock;
 
   /**
-   * topicuser.
+   * topicstock.
    *
-   * @return topicuser
+   * @return topicstock
    */
   @Bean
-  public static String staticTopicUser() {
-    return topicUser;
+  public static String staticTopicStock() {
+    return topicStock;
   }
 }
