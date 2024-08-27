@@ -61,6 +61,14 @@ public class Stock {
     this.statusProduct = statusProduct;
   }
 
+  public Stock(
+      Long quantityPresent,
+      Long quantityMinimous,
+      Long quantityMaximous,
+      Date dateVality
+  ) {
+  }
+
   public Long getProductId() {
     return productId;
   }
