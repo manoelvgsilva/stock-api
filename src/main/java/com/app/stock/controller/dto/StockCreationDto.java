@@ -9,12 +9,14 @@ import java.util.Date;
  * @param quantityPresent the quantitypresent
  * @param quantityMinimous the quantityminimous
  * @param quantityMaximous the quantitymaximous
+ * @param dateCreation the datecreation
  * @param dateVality the datevality
  */
 public record StockCreationDto(
     Long quantityPresent,
     Long quantityMinimous,
     Long quantityMaximous,
+    Date dateCreation,
     Date dateVality
 ) {
 
@@ -25,6 +27,7 @@ public record StockCreationDto(
    */
   public Stock toEntity() {
     return new Stock(quantityPresent, quantityMinimous, quantityMaximous,
+        dateCreation,
         dateVality);
   }
 }
