@@ -3,10 +3,9 @@ package com.app.stock.service;
 import com.app.stock.entity.Stock;
 import com.app.stock.repository.StockRepository;
 import com.app.stock.service.exception.StockNotFoundException;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 /**
  * stockservice.
