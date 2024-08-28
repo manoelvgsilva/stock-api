@@ -47,4 +47,21 @@ public class StockService {
     }
     return stock.get();
   }
+
+  /**
+   * upstock.
+   *
+   * @param productId the productid
+   * @return stock
+   */
+  public Stock upStockOfProduct(Long productId) {
+    Optional<Stock> stock = stockRepository.findById(productId);
+    if (stock.isEmpty()) {
+      throw new StockNotFoundException();
+    }
+    Stock upStock = stock.get();
+    upStock.setQuantityPresent(upStock.getQuantityPresent());
+    stockRepository.save(upStock);
+    return upStock;
+  }
 }
