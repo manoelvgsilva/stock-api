@@ -2,14 +2,11 @@ package com.app.stock.controller;
 
 import com.app.stock.controller.dto.StockCreationDto;
 import com.app.stock.controller.dto.StockDto;
+import com.app.stock.entity.Stock;
 import com.app.stock.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * stockcontroller.
@@ -43,5 +40,17 @@ public class StockController {
     return StockDto.fromEntity(
         stockService.createStock(stockCreationDto.toEntity())
     );
+  }
+
+  /**
+   * getProduct.
+   *
+   * @param productId the productId
+   * @return product
+   */
+  @GetMapping("/{productId}")
+  public StockDto getProduct(@PathVariable Long productId) {
+    Stock getStock = stockService.findByProductId(productId);
+    return StockDto.fromEntity(getStock);
   }
 }
