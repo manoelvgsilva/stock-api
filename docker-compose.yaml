@@ -5,8 +5,8 @@ services:
     networks:
       - broker-kafka
     environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_CLIENT_PORT: 2222
+      ZOOKEEPER_TICK_TIME: 3000
 
   kafka:
     image: confluentinc/cp-kafka:latest
@@ -15,11 +15,11 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - 9092:9092
+      - 7272:7072
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: ZOOKEEPER:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_ZOOKEEPER_CONNECT: ZOOKEEPER:2222
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:39039, PLAINTEXT_HOST://localhost:7272
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
@@ -31,9 +31,9 @@ services:
     depends_on:
       - kafka
     ports:
-      - 19000:9000
+      - 7000:7000
     environment:
-      KAFKA_BROKERCONNECT: kafka:29092
+      KAFKA_BROKERCONNECT: kafka:39039
 
   mongodb:
     image: mongo:latest
@@ -43,7 +43,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: stockAdmin
       MONGO_INITDB_ROOT_PASSWORD: stockPassword
     ports:
-      - 27017:27017
+      - 17017:17017
     volumes:
       - mongo-data:/stock/db
 
@@ -53,12 +53,12 @@ services:
       dockerfile: Dockerfile
     environment:
       SPRING_DATA_MONGODB_HOST: mongodb
-      SPRING_DATA_MONGODB_PORT: 27017
+      SPRING_DATA_MONGODB_PORT: 17017
       SPRING_DATA_MONGODB_DATABASE: stockdb
     depends_on:
       - mongodb
     ports:
-      - 8080:8080
+      - 1212:1212
 
 volumes:
   mongo-data:
