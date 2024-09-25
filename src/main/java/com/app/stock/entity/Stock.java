@@ -1,27 +1,17 @@
 package com.app.stock.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import java.util.Date;
 import java.util.Objects;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * stock.
  */
-@Entity
-@Table(name = "stocks")
-@EntityListeners(AuditingEntityListener.class)
+@Document(collection = "stocks")
 public class Stock {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(unique = true)
   private Long productId;
   private Long quantityPresent;
   private Long quantityMinimous;
