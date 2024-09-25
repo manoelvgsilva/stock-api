@@ -56,13 +56,13 @@ public class StockController {
    * @return product
    */
   @GetMapping("/{productId}")
-  public StockDto getProduct(@PathVariable Long productId) {
+  public StockDto getProduct(@PathVariable String productId) {
     Stock getStock = stockService.findByProductId(productId);
     return StockDto.fromEntity(getStock);
   }
 
   @PutMapping("/{productId}")
-  public StockDto upStockOfProduct(@PathVariable Long productId) {
+  public StockDto upStockOfProduct(@PathVariable String productId) {
     Stock upStock = stockService.upStockOfProduct(productId);
     return StockDto.fromEntity(upStock);
   }

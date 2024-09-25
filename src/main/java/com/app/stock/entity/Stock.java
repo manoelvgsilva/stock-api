@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Stock {
 
   @Id
-  private Long productId;
+  private String productId;
   private Long quantityPresent;
   private Long quantityMinimous;
   private Long quantityMaximous;
@@ -36,7 +36,7 @@ public class Stock {
    * @param statusProduct the statusproduct
    */
   public Stock(
-      Long productId,
+      String productId,
       Long quantityPresent,
       Long quantityMinimous,
       Long quantityMaximous,
@@ -55,20 +55,11 @@ public class Stock {
     this.statusProduct = statusProduct;
   }
 
-  public Stock(
-      Long quantityPresent,
-      Long quantityMinimous,
-      Long quantityMaximous,
-      Date dateCreation,
-      Date dateVality
-  ) {
-  }
-
-  public Long getProductId() {
+  public String getProductId() {
     return productId;
   }
 
-  public void setProductId(Long productId) {
+  public void setProductId(String productId) {
     this.productId = productId;
   }
 

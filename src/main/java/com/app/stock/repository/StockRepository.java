@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
  * stockrepository.
  */
 @Repository
-public interface StockRepository extends MongoRepository<Stock, Long> {
-  Optional<Stock> findById(Long productId);
+public interface StockRepository extends MongoRepository<Stock, String> {
+  Optional<Stock> findByString(String productId);
 }

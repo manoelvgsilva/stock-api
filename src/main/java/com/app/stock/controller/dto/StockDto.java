@@ -16,7 +16,7 @@ import java.util.Date;
  * @param statusProduct the statusproduct
  */
 public record StockDto(
-    Long productId,
+    String productId,
     Long quantityPresent,
     Long quantityMinimous,
     Long quantityMaximous,

@@ -40,8 +40,8 @@ public class StockService {
    * @param productId the productId
    * @return stock
    */
-  public Stock findByProductId(Long productId) {
-    Optional<Stock> stock = stockRepository.findById(productId);
+  public Stock findByProductId(String productId) {
+    Optional<Stock> stock = stockRepository.findByString(productId);
     if (stock.isEmpty()) {
       throw new StockNotFoundException();
     }
@@ -54,8 +54,8 @@ public class StockService {
    * @param productId the productid
    * @return stock
    */
-  public Stock upStockOfProduct(Long productId) {
-    Optional<Stock> stock = stockRepository.findById(productId);
+  public Stock upStockOfProduct(String productId) {
+    Optional<Stock> stock = stockRepository.findByString(productId);
     if (stock.isEmpty()) {
       throw new StockNotFoundException();
     }
