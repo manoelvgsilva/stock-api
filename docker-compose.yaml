@@ -15,7 +15,7 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - 9092:9092
+      - 9093:9092
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: ZOOKEEPER:2222
@@ -43,7 +43,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: stockAdmin
       MONGO_INITDB_ROOT_PASSWORD: stockPassword
     ports:
-      - 27017:27017
+      - 28018:27017
     volumes:
       - mongo-data:/stock/db
 
