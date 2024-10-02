@@ -8,7 +8,7 @@ seguintes rotas GET, POST E UPDATE
 Java 17
 Maven 3.6
 Docker
-Mongo 6
+Mongo
 Kafka
 
 # Instalação
@@ -52,9 +52,9 @@ curl -X POST http://localhost:8080/stocks
 -H "Content-Type: application/json" \
 -d '{
     "productId": "i9jo9gh764g6543",
-    "quantityPresent": 9,
-    "quantityMinimous": 6,
-    "quantityMaximous": 18,
+    "quantityPresent": "9",
+    "quantityMinimous": "6",
+    "quantityMaximous": "18",
     "dateCreation": "2024-01-01",
     "dateVality": "2024-06-01",
     "localPresent": "em algum lugar",
