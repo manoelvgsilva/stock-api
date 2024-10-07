@@ -80,21 +80,6 @@ Kafka
 
 _____________________________________________________________
 
-### Acessa todos os estoques
-
-<details>
-    <summary><code>GET</code> <code><b>/stocks</b></code> <code>(Acessa todos os estoques)</code></summary>
-
-##### Parametros
-> none
- 
-##### Example cURL
-> ```java
->  curl -X 'POST' 'http://localhost:8080/stocks'
-> ```
-</details>
-
-______________________________________________________________________________________
 
 ### atualiza algum dado de algum estoque pelo id do produto
 
