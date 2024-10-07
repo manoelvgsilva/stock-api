@@ -41,15 +41,15 @@ Kafka
 ### Endpoints principais:
 
 ## Stock
-### Cria um novo usuario
+### Cria um novo estoque
 
 <details>
-    <summary><code>POST</code> <code><b>/stock</b></code> <code>(Cria um novo estoque)</code></summary>
+    <summary><code>POST</code> <code><b>/stocks</b></code> <code>(Cria um novo estoque)</code></summary>
 
     ##### Parametros
 > | name      |  type     | data type               | description                                                           |
 > |-----------|-----------|-------------------------|-----------------------------------------------------------------------|
-> | Body      |  required | object (JSON)   | User obj |
+> | Body      |  required | object (JSON)   | stock obj |
 
 > ##### Example cURL
 
