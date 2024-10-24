@@ -15,18 +15,18 @@ public class OpenApiConfig implements OpenApiCustomizer {
   public void customise(OpenAPI openApi) {
     Info info = new Info()
         .title("API de estoque")
-        .description("Este projeto apresenta uma API RESTful que gerencia os " +
-            "produtos que existem no estoque do ecommerce oferecendo uma " +
-            "visão de data de entrada data de validade quantidade que há " +
-            "quantidade suportada e localização desses produtos na loja"
+        .description("Este projeto apresenta uma API RESTful que gerencia os "
+            + "produtos que existem no estoque do ecommerce oferecendo uma "
+            + "visão de data de entrada data de validade quantidade que há "
+            + "quantidade suportada e localização desses produtos na loja"
             + ", possibilitando às pessoas usuárias criar, visualizar, atualizar e excluir"
-            + " estoque de produtos, de forma intuitiva e prática. A" +
-            " API " +
-            "oferece" +
-            " endpoints específicos para"
-            + " operações CRUD (Create, Read, Update, Delete) em listas de " +
-            "estoque," +
-            " visando"
+            + " estoque de produtos, de forma intuitiva e prática. A"
+            + " API "
+            + "oferece"
+            + " endpoints específicos para"
+            + " operações CRUD (Create, Read, Update, Delete) em listas de "
+            + "estoque,"
+            + " visando"
             + " proporcionar uma experiência consistente e confiável.")
         .version("1.0.0");
 
